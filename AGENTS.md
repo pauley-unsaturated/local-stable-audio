@@ -125,3 +125,11 @@ bd prime                # Refresh Beads context
 
 **Architecture in one line:** issues live in a local Dolt DB; sync uses `refs/dolt/data` on your git remote; `.beads/issues.jsonl` is a passive export. See https://github.com/gastownhall/beads/blob/main/docs/SYNC_CONCEPTS.md for details and anti-patterns.
 <!-- END BEADS CODEX SETUP -->
+
+## Project context
+
+This is `local-stable-audio`: a SwiftUI macOS instrument on Stable Audio 3 with a
+Python MLX sidecar. Substantive project instructions (ground rules, layout,
+toolchain, verified facts, conventions, beads workflow) live in `CLAUDE.md`;
+mirror any edit made here into that file and vice versa. Start with
+`docs/HANDOFF.md`, then `DECISIONS.md`, then `bd ready`.

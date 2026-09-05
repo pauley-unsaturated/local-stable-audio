@@ -4,3 +4,31 @@
 *.db
 .beads-credential-key
 .beads/proxieddb/
+
+# Python (sidecar venv, caches)
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Generated audio, benchmark output, downloaded weights (symlinks into HF cache)
+output/
+*.wav
+*.npz
+models/mlx/
+external/stable-audio-3/optimized/mlx/.venv/
+external/stable-audio-3/optimized/mlx/models/mlx/
+external/stable-audio-3/optimized/mlx/output/
+
+# Xcode / SwiftPM
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+.swiftpm/xcode/
+
+# macOS
+.DS_Store
