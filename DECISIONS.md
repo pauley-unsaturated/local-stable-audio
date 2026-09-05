@@ -188,3 +188,77 @@ sample count and channel count in the `audio_ready` event. The app maps it into
 an `AVAudioPCMBuffer` (deinterleaving once, off the render thread). WAV export
 for the user is a separate, later concern (see the open decision on output
 location).
+
+## D-013 · 2026-09-05 · accepted · AUv3 is on the roadmap; standalone app with recording ships first
+
+**Context.** HANDOFF §12.4. Mark, 2026-09-05: "Yes, but probably just an app
+to begin with that can do recording."
+
+**Decision.** Phase 3's render path is built as an `AUAudioUnit` subclass
+whose `internalRenderBlock` reads the atomic buffer pointer, hosted in-app
+through `AVAudioUnit`. Nothing in the render graph may assume it runs inside
+`SA3Local.app`; parameters go through an `AUParameterTree`, tempo and transport
+come from the host musical-context blocks (the app is the host until Phase 8).
+Recording of the live output is a Phase 4 task (`lsa-8gc.8`). Phase 8 epic
+(`lsa-xmd`) packages the same unit as an app extension after packaging is done.
+
+**Consequences.** The sidecar cannot live inside an app extension's sandbox;
+Phase 8 has to choose XPC to the container app or a mandatory companion app.
+Flagged there, not solved here.
+
+## D-014 · 2026-09-05 · accepted · Explorer pad: X slerps seeds, Y lerps prompts
+
+**Context.** HANDOFF §12.2 offered "seeds, prompts, or both on separate
+axes". Mark, 2026-09-05: "Seeds and prompts please."
+
+**Decision.** Read as both, on separate axes. X interpolates `x_T` between
+seed A and seed B by slerp; Y interpolates T5Gemma conditioning between prompt
+P and prompt Q by lerp. This is the four-corner bilinear model of HANDOFF §6
+with corners constrained to `{A,B} × {P,Q}`, which keeps each axis legible.
+`sigma_max` and CFG remain separate sliders. Cache key: `(A, B, P, Q, x, y,
+sampler_seed, sigma_max, cfg, steps, seconds, dit, decoder, dit_dtype)`.
+
+If Mark meant a single blended pair per corner, revert `lsa-8s5.1` to the
+original description; the sidecar's `interpolate` request supports both.
+
+## D-015 · 2026-09-05 · accepted · Render to disk, play back live
+
+**Context.** HANDOFF §12.3. Mark, 2026-09-05: "Render to disk, play back
+live."
+
+**Decision.** Every generation from either instrument is persisted to an
+app-managed library as a WAV plus a JSON sidecar (prompt, seeds, `sigma_max`,
+CFG, steps, model, parent id, timestamps). Playback is from in-memory buffers.
+The library root defaults to `~/Music/SA3Local` and is user-changeable; that
+default is my assumption, not Mark's instruction. Filename convention:
+`<yyyymmdd-hhmmss>_<dit>_<seed>_<slug>.wav`. Live output is also recordable
+(`lsa-8gc.8`), with a sidecar listing the lineage ids played and their
+sample-accurate swap offsets. The lineage tree must be rebuildable from
+sidecars alone.
+
+## D-016 · 2026-09-05 · proposed · Default model: `sm-music` + `same-s`, `medium` resident as opt-in HQ
+
+**Context.** HANDOFF §12.1. Mark asked for the choices and a recommendation
+for the M4 Pro / 48 GB.
+
+**Verified inventory** (`stabilityai/stable-audio-3-optimized`, `MLX/`, listed
+2026-09-05): three inference DiTs (`dit_sm-music_f16`, `dit_sm-sfx_f16`,
+`dit_medium_f16`), their three `-base` counterparts (rectified-flow weights
+without ARC post-training, used by the LoRA trainer), SAME-S and SAME-L
+encoder/decoder pairs in f32, and T5Gemma f16. There are no quantized MLX
+bundles; INT8/FP8 variants exist only for ONNX, TensorRT, TFLite and cpu-amx.
+`large` (2.7B) is API-only. Base checkpoints are not inference defaults.
+
+**Recommendation.** Default to `sm-music` + `same-s` for both instruments.
+Keep `medium` + `same-l` resident as an opt-in "HQ" mode for the Explorer and
+for render-to-disk, and `sm-sfx` as a third selectable DiT (it shares the
+SAME-S codec, so it costs 0.9 GB more, nothing else). All of it resident is
+about 9 GB of weights, which the machine absorbs. Rationale: the Loop Mutator's
+budget is the binding constraint, and upstream's own M4 Pro numbers put
+`sm-music` at well under a second for a 7.5 s loop and `medium` at roughly
+three seconds, which fits a one-loop interval only with the
+start-at-previous-top scheduling and thin thermal headroom. The Explorer
+tolerates `medium`'s two-to-three-second release-to-generate; the looper does
+not by default. Confirm after Phase 0 listening: if `sm-music` is audibly
+too thin for musical loops, flip the default and let the margin readout police
+the looper.

@@ -90,6 +90,7 @@ internals, AVFoundation, CoreAudio and Metal. Do not explain basics.
 | Path | What |
 |---|---|
 | `docs/HANDOFF.md` | The brief. Phase plan, architecture, traps. |
+| `docs/IDEAS.md` | Speculative, unscheduled directions. Read for context, do not build from it without a bead. |
 | `DECISIONS.md` | Assumptions and departures, `D-NNN`, with `file:line`. |
 | `BASELINE.md` | Numbers measured on this machine. Fill, never estimate. |
 | `external/stable-audio-3` | Upstream, git submodule pinned at `779434a`. Read-only. See D-001. |

@@ -72,6 +72,7 @@ local-stable-audio/
 ├── DECISIONS.md             assumptions and departures from the handoff, with file:line
 ├── BASELINE.md              measured numbers for this machine
 ├── docs/HANDOFF.md          the founding brief
+├── docs/IDEAS.md            speculative directions the architecture affords, tied to the Research Vault
 ├── external/stable-audio-3  upstream, pinned as a submodule (read, never edited)
 ├── sidecar/                 sa3d.py, engine.py, latents.py, weights.py, protocol.py   (Phase 2)
 ├── app/SA3Local/            SwiftUI app: SidecarClient, AudioEngine, Explorer/, Looper/, Lineage/  (Phase 3+)
