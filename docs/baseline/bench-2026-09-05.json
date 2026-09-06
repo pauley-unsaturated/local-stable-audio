@@ -1,0 +1,350 @@
+[
+  {
+    "stages_ms": {
+      "1/5": 242,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 4
+    },
+    "loads_ms": {
+      "3/5": 200.0,
+      "4/5": 65.0
+    },
+    "sample_ms": 767,
+    "ms_per_step": 96,
+    "decode_ms": 176,
+    "wall_s": 1.47,
+    "audio_s": 10.0,
+    "realtime": 6.81,
+    "mlx_peak_gb": 1.68,
+    "rss_peak_gb": 1.27130126953125,
+    "loads_total_ms": 507.0,
+    "warm_est_s": 0.963,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "sm-music-10s-free-r1",
+    "external_wall_s": 1.58
+  },
+  {
+    "stages_ms": {
+      "1/5": 216,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 4
+    },
+    "loads_ms": {
+      "3/5": 200.0,
+      "4/5": 41.0
+    },
+    "sample_ms": 781,
+    "ms_per_step": 98,
+    "decode_ms": 144,
+    "wall_s": 1.39,
+    "audio_s": 10.0,
+    "realtime": 7.18,
+    "mlx_peak_gb": 1.68,
+    "rss_peak_gb": 1.0516204833984375,
+    "loads_total_ms": 457.0,
+    "warm_est_s": 0.9329999999999998,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "sm-music-10s-free-r2",
+    "external_wall_s": 1.51
+  },
+  {
+    "stages_ms": {
+      "1/5": 207,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 3
+    },
+    "loads_ms": {
+      "3/5": 200.0,
+      "4/5": 40.0
+    },
+    "sample_ms": 799,
+    "ms_per_step": 100,
+    "decode_ms": 180,
+    "wall_s": 1.44,
+    "audio_s": 10.0,
+    "realtime": 6.94,
+    "mlx_peak_gb": 1.68,
+    "rss_peak_gb": 1.082366943359375,
+    "loads_total_ms": 447.0,
+    "warm_est_s": 0.9929999999999999,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "sm-music-10s-free-r3",
+    "external_wall_s": 1.55
+  },
+  {
+    "stages_ms": {
+      "1/5": 216,
+      "2/5": 5,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 5
+    },
+    "loads_ms": {
+      "3/5": 1600.0,
+      "4/5": 382.0
+    },
+    "sample_ms": 2434,
+    "ms_per_step": 304,
+    "decode_ms": 572,
+    "wall_s": 5.23,
+    "audio_s": 10.0,
+    "realtime": 1.91,
+    "mlx_peak_gb": 3.89,
+    "rss_peak_gb": 1.9513092041015625,
+    "loads_total_ms": 2198.0,
+    "warm_est_s": 3.0320000000000005,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "medium-10s-free-r1",
+    "external_wall_s": 5.38
+  },
+  {
+    "stages_ms": {
+      "1/5": 203,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 7
+    },
+    "loads_ms": {
+      "3/5": 500.0,
+      "4/5": 266.0
+    },
+    "sample_ms": 2058,
+    "ms_per_step": 257,
+    "decode_ms": 481,
+    "wall_s": 3.57,
+    "audio_s": 10.0,
+    "realtime": 2.8,
+    "mlx_peak_gb": 3.89,
+    "rss_peak_gb": 2.9620208740234375,
+    "loads_total_ms": 969.0,
+    "warm_est_s": 2.601,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "medium-10s-free-r2",
+    "external_wall_s": 3.69
+  },
+  {
+    "stages_ms": {
+      "1/5": 223,
+      "2/5": 4,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 9
+    },
+    "loads_ms": {
+      "3/5": 500.0,
+      "4/5": 260.0
+    },
+    "sample_ms": 2054,
+    "ms_per_step": 257,
+    "decode_ms": 461,
+    "wall_s": 3.55,
+    "audio_s": 10.0,
+    "realtime": 2.81,
+    "mlx_peak_gb": 3.89,
+    "rss_peak_gb": 2.963287353515625,
+    "loads_total_ms": 983.0,
+    "warm_est_s": 2.5669999999999997,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 10,
+    "free_models": true,
+    "tag": "medium-10s-free-r3",
+    "external_wall_s": 3.69
+  },
+  {
+    "stages_ms": {
+      "1/5": 224,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 6
+    },
+    "loads_ms": {
+      "3/5": 200.0,
+      "4/5": 49.0
+    },
+    "sample_ms": 790,
+    "ms_per_step": 99,
+    "decode_ms": 175,
+    "wall_s": 1.42,
+    "audio_s": 10.0,
+    "realtime": 7.04,
+    "mlx_peak_gb": 2.21,
+    "rss_peak_gb": 2.14471435546875,
+    "loads_total_ms": 473.0,
+    "warm_est_s": 0.947,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 10,
+    "free_models": false,
+    "tag": "sm-music-10s-nofree",
+    "external_wall_s": 1.56
+  },
+  {
+    "stages_ms": {
+      "1/5": 246,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 7
+    },
+    "loads_ms": {
+      "3/5": 500.0,
+      "4/5": 486.0
+    },
+    "sample_ms": 2159,
+    "ms_per_step": 270,
+    "decode_ms": 559,
+    "wall_s": 3.97,
+    "audio_s": 10.0,
+    "realtime": 2.52,
+    "mlx_peak_gb": 6.55,
+    "rss_peak_gb": 5.3216705322265625,
+    "loads_total_ms": 1232.0,
+    "warm_est_s": 2.7380000000000004,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 10,
+    "free_models": false,
+    "tag": "medium-10s-nofree",
+    "external_wall_s": 4.16
+  },
+  {
+    "stages_ms": {
+      "1/5": 207,
+      "2/5": 5,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 9
+    },
+    "loads_ms": {
+      "3/5": 300.0,
+      "4/5": 64.0
+    },
+    "sample_ms": 1183,
+    "ms_per_step": 148,
+    "decode_ms": 483,
+    "wall_s": 2.35,
+    "audio_s": 30.0,
+    "realtime": 12.79,
+    "mlx_peak_gb": 1.94,
+    "rss_peak_gb": 1.018707275390625,
+    "loads_total_ms": 571.0,
+    "warm_est_s": 1.7790000000000001,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 30,
+    "free_models": true,
+    "tag": "sm-music-30s-free",
+    "external_wall_s": 2.5
+  },
+  {
+    "stages_ms": {
+      "1/5": 195,
+      "2/5": 2,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 43
+    },
+    "loads_ms": {
+      "3/5": 200.0,
+      "4/5": 39.0
+    },
+    "sample_ms": 3078,
+    "ms_per_step": 385,
+    "decode_ms": 1951,
+    "wall_s": 5.52,
+    "audio_s": 120.0,
+    "realtime": 21.72,
+    "mlx_peak_gb": 2.38,
+    "rss_peak_gb": 1.384918212890625,
+    "loads_total_ms": 434.0,
+    "warm_est_s": 5.085999999999999,
+    "dit": "sm-music",
+    "decoder": "same-s",
+    "seconds": 120,
+    "free_models": true,
+    "tag": "sm-music-120s-free",
+    "external_wall_s": 5.63
+  },
+  {
+    "stages_ms": {
+      "1/5": 179,
+      "2/5": 2,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 15
+    },
+    "loads_ms": {
+      "3/5": 500.0,
+      "4/5": 302.0
+    },
+    "sample_ms": 3412,
+    "ms_per_step": 427,
+    "decode_ms": 1884,
+    "wall_s": 6.36,
+    "audio_s": 30.0,
+    "realtime": 4.72,
+    "mlx_peak_gb": 3.89,
+    "rss_peak_gb": 2.9745025634765625,
+    "loads_total_ms": 981.0,
+    "warm_est_s": 5.3790000000000004,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 30,
+    "free_models": true,
+    "tag": "medium-30s-free",
+    "external_wall_s": 6.49
+  },
+  {
+    "stages_ms": {
+      "1/5": 195,
+      "2/5": 3,
+      "3/5": null,
+      "4/5": null,
+      "5/5": 56
+    },
+    "loads_ms": {
+      "3/5": 500.0,
+      "4/5": 246.0
+    },
+    "sample_ms": 8965,
+    "ms_per_step": 1121,
+    "decode_ms": 6451,
+    "wall_s": 16.44,
+    "audio_s": 120.0,
+    "realtime": 7.3,
+    "mlx_peak_gb": 5.21,
+    "rss_peak_gb": 2.97589111328125,
+    "loads_total_ms": 941.0,
+    "warm_est_s": 15.499,
+    "dit": "medium",
+    "decoder": "same-l",
+    "seconds": 120,
+    "free_models": true,
+    "tag": "medium-120s-free",
+    "external_wall_s": 16.55
+  }
+]

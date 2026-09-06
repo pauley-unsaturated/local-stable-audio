@@ -112,7 +112,9 @@ in `backends/base.py` and `protocol.py`; its MLX code is a hint, not a dependenc
   `cd external/stable-audio-3/optimized/mlx && ./install.sh -y --python 3.12`.
   Run upstream via `./sa3 ...` there, or `.venv/bin/python` directly. The venv,
   `models/mlx/` symlinks and `output/` inside the submodule are gitignored.
-- `bd` (beads 1.2.2, Homebrew) for tasks; prefix `lsa`.
+- `bd` (beads 1.2.2, Homebrew) for tasks; prefix `lsa`. Run it from the repo
+  root or with `-C /Users/markpauley/Programs/local-stable-audio`: inside the
+  submodule it reports "no beads database found".
 - No `hf` CLI is installed; `huggingface_hub` inside the venv handles downloads.
 
 ## Build & test
@@ -123,6 +125,14 @@ Phase 0/1 (now):
 cd external/stable-audio-3/optimized/mlx
 ./sa3 --prompt "..." --dit sm-music --decoder same-s --seconds 10 --seed 1 --out /abs/path.wav
 .venv/bin/python /path/to/tests/test_determinism.py     # Phase 1 harness, runs in this venv
+```
+
+From the repo root, driver scripts use the system `python3` (stdlib only) and
+call the venv interpreter themselves:
+
+```bash
+python3 tools/bench.py [--quick] [--json out.json]   # HANDOFF §2 matrix -> BASELINE.md
+python3 tools/wavcheck.py file.wav --bpm-hint 128    # level/spectrum/tempo sanity checks
 ```
 
 Phase 2+: `sidecar/` gets its own `uv` project that puts

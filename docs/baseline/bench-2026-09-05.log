@@ -1,0 +1,33 @@
+→ sm-music-10s-free-r1             wall   1.47s  ext   1.58s  warm≈ 0.96s  rss 1.27 GB  mlx 1.68 GB  sample 767 ms  decode 176 ms
+→ sm-music-10s-free-r2             wall   1.39s  ext   1.51s  warm≈ 0.93s  rss 1.05 GB  mlx 1.68 GB  sample 781 ms  decode 144 ms
+→ sm-music-10s-free-r3             wall   1.44s  ext   1.55s  warm≈ 0.99s  rss 1.08 GB  mlx 1.68 GB  sample 799 ms  decode 180 ms
+→ medium-10s-free-r1               wall   5.23s  ext   5.38s  warm≈ 3.03s  rss 1.95 GB  mlx 3.89 GB  sample 2434 ms  decode 572 ms
+→ medium-10s-free-r2               wall   3.57s  ext   3.69s  warm≈ 2.60s  rss 2.96 GB  mlx 3.89 GB  sample 2058 ms  decode 481 ms
+→ medium-10s-free-r3               wall   3.55s  ext   3.69s  warm≈ 2.57s  rss 2.96 GB  mlx 3.89 GB  sample 2054 ms  decode 461 ms
+→ sm-music-10s-nofree              wall   1.42s  ext   1.56s  warm≈ 0.95s  rss 2.14 GB  mlx 2.21 GB  sample 790 ms  decode 175 ms
+→ medium-10s-nofree                wall   3.97s  ext   4.16s  warm≈ 2.74s  rss 5.32 GB  mlx 6.55 GB  sample 2159 ms  decode 559 ms
+→ sm-music-30s-free                wall   2.35s  ext   2.50s  warm≈ 1.78s  rss 1.02 GB  mlx 1.94 GB  sample 1183 ms  decode 483 ms
+→ sm-music-120s-free               wall   5.52s  ext   5.63s  warm≈ 5.09s  rss 1.38 GB  mlx 2.38 GB  sample 3078 ms  decode 1951 ms
+→ medium-30s-free                  wall   6.36s  ext   6.49s  warm≈ 5.38s  rss 2.97 GB  mlx 3.89 GB  sample 3412 ms  decode 1884 ms
+→ medium-120s-free                 wall  16.44s  ext  16.55s  warm≈15.50s  rss 2.98 GB  mlx 5.21 GB  sample 8965 ms  decode 6451 ms
+
+## Cold vs derived-warm, 10 s (median of repeats, --free-models)
+
+| dit | cold wall (s) | loads (s) | warm est. (s) | warm × RT | sample (ms) | ms/step | decode (ms) |
+|---|---|---|---|---|---|---|---|
+| sm-music | 1.44 | 0.46 | 0.96 | 10.4× | 781 | 98 | 176 |
+| medium | 3.57 | 0.98 | 2.60 | 3.8× | 2058 | 257 | 481 |
+
+## Peak memory, 10 s
+
+| dit | RSS free (GB) | RSS no-free (GB) | MLX peak free (GB) | MLX peak no-free (GB) |
+|---|---|---|---|---|
+| sm-music | 1.27 | 2.14 | 1.68 | 2.21 |
+| medium | 2.96 | 5.32 | 3.89 | 6.55 |
+
+## Wall vs length (cold, --free-models)
+
+| dit | 10 s | 30 s | 120 s | decode share @120 s |
+|---|---|---|---|---|
+| sm-music | 1.44 | 2.35 | 5.52 | 35% |
+| medium | 3.57 | 6.36 | 16.44 | 39% |
